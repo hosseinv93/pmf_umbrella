@@ -139,5 +139,4 @@ z PMF probability total_counts
 
 The PMF is shifted so that its minimum is zero.
 
-```
 
