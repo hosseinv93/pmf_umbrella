@@ -139,18 +139,5 @@ z PMF probability total_counts
 
 The PMF is shifted so that its minimum is zero.
 
-## Notes
-
-This fix does not magically make PMF calculations cheap. Umbrella sampling still requires enough overlap between neighboring windows and sufficient equilibration of polymer conformations, ions, charge regulation, and electrode charges.
-
-Useful checks:
-
-```bash
-xmgrace -block pmf.summary.dat -bxy 2:4   # <z_COM> vs z0
-xmgrace -block pmf.summary.dat -bxy 2:7   # mean system force vs z0
-xmgrace pmf_profile.dat                   # WHAM PMF
 ```
 
-If `<z_COM>` is far from `z0`, increase `K`, reduce `dz`, or increase `nequil`.
-
-If neighboring histograms do not overlap, reduce `dz`, reduce `K`, or sample longer.
